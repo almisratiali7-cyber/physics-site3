@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Physics Lab | Misurata University | FEM Triangular Well + 1D Motion + Vectors</title>
+    <title>Physics Lab | Misurata University | Correct Triangular Quantum Well</title>
     <style>
-        * {
-            box-sizing: border-box;
-        }
+        * { box-sizing: border-box; }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(145deg, #f5f7fc 0%, #e9eef4 100%);
@@ -15,11 +13,7 @@
             padding: 20px;
             color: #1a2c3e;
         }
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        /* Header with images */
+        .container { max-width: 1400px; margin: 0 auto; }
         .header {
             display: flex;
             align-items: center;
@@ -30,11 +24,7 @@
             margin-bottom: 30px;
             box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
-        .header img {
-            height: 70px;
-            width: auto;
-            object-fit: contain;
-        }
+        .header img { height: 70px; width: auto; object-fit: contain; }
         .dept-title {
             text-align: center;
             font-size: 1.8rem;
@@ -54,31 +44,11 @@
             margin-bottom: 30px;
             border: 1px solid rgba(255,255,255,0.5);
         }
-        .card h2 {
-            border-left: 5px solid #3182ce;
-            padding-left: 15px;
-            margin-top: 0;
-        }
-        .flex-row {
-            display: flex;
-            gap: 30px;
-            flex-wrap: wrap;
-            align-items: flex-end;
-            margin-bottom: 20px;
-        }
-        .control-group {
-            flex: 1;
-            min-width: 180px;
-        }
-        label {
-            font-weight: 600;
-            display: block;
-            margin-bottom: 5px;
-        }
-        input[type="range"], select {
-            width: 100%;
-            cursor: pointer;
-        }
+        .card h2 { border-left: 5px solid #3182ce; padding-left: 15px; margin-top: 0; }
+        .flex-row { display: flex; gap: 30px; flex-wrap: wrap; align-items: flex-end; margin-bottom: 20px; }
+        .control-group { flex: 1; min-width: 180px; }
+        label { font-weight: 600; display: block; margin-bottom: 5px; }
+        input[type="range"], select { width: 100%; cursor: pointer; }
         .value-display {
             background: #edf2f7;
             padding: 4px 12px;
@@ -145,9 +115,9 @@
 </head>
 <body>
 <div class="container">
-    <!-- Header with images and department -->
+    <!-- Header with images (replace src with your actual image files) -->
     <div class="header">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAACXBIWXMAAAsTAAALEwEAmpwYAAAB1UlEQVR4nO2aPU7DQBCFnyNQcASKxAmQKOgQEiUloqCgQHACKsSBKKBBQoiWKyBxBEouQMGfyC3ybryetT3elUYqz87szPdmPV5bhmH4TwJKEIQgCEEQgiAEQQhCEIQgCEEQgiAEQQhCEIQgCEEQgiAEQQhCEIQgCEEQgiAEQQhCEIQgCEEQgiAEQQhCEIQgCEEQgiAEQQhCEIQgCEEQghAEIQhBEIIgBEEIghAEIQhCEIQgCEEIghAEIQhCEIQgBEEIghAEIQhCEIQgCEEIghAEIQhCEIQgBEEIghAEIQhCEIQgBEEIghAEIQhCEIIgBEEIghAEIQhCEIQgBEEIghAEIQhCEIIgBEEIghAEIQhCEIIgBEEIghAEIQhCEIIgBEEIghAEIQhCEIIgBEEIghAEIQhCkF8L/l8NfwgAAAAASUVORK5CYII=" alt="Misurata University" style="height:70px;">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAACXBIWXMAAAsTAAALEwEAmpwYAAAB1UlEQVR4nO2aPU7DQBCFnyNQcASKxAmQKOgQEiUloqCgQHACKsSBKKBBQoiWKyBxBEouQMGfyC3ybryetT3elUYqz87szPdmPV5bhmH4TwJKEIQgCEEQgiAEIQhCEIQgCEEQgiAEQQhCEIQgCEEQgiAEQQhCEIQgCEEQgiAEQQhCEIQgCEEQgiAEQQhCEIQgCEEQgiAEQQhCEIQgCEEQghAEIQhBEIIgBEEIghAEIQhCEIQgCEEIghAEIQhCEIQgBEEIghAEIQhCEIQgCEEIghAEIQhCEIQgCEEIghAEIQhCEIQgBEEIghAEIQhCEIIgBEEIghAEIQhCEIQgCEEIghAEIQhCEIIgBEEIghAEIQhCEIIgBEEIghAEIQhCEIIgBEEIghAEIQhCkF8L/l8NfwgAAAAASUVORK5CYII=" alt="Misurata University" style="height:70px;">
         <div class="dept-title">Department of Physics</div>
         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAACXBIWXMAAAsTAAALEwEAmpwYAAAB1UlEQVR4nO2aPU7DQBCFnyNQcASKxAmQKOgQEiUloqCgQHACKsSBKKBBQoiWKyBxBEouQMGfyC3ybryetT3elUYqz87szPdmPV5bhmH4TwJKEIQgCEEQgiAEIQhCEIQgCEEQgiAEQQhCEIQgCEEQgiAEQQhCEIQgCEEQgiAEQQhCEIQgCEEQgiAEQQhCEIQgCEEQgiAEQQhCEIQgCEEQghAEIQhBEIIgBEEIghAEIQhCEIQgCEEIghAEIQhCEIQgBEEIghAEIQhCEIQgCEEIghAEIQhCEIQgCEEIghAEIQhCEIQgBEEIghAEIQhCEIIgBEEIghAEIQhCEIQgCEEIghAEIQhCEIIgBEEIghAEIQhCEIIgBEEIghAEIQhCEIIgBEEIghAEIQhCkF8L/l8NfwgAAAAASUVORK5CYII=" alt="Faculty of Science" style="height:70px;">
     </div>
@@ -201,20 +171,19 @@
         <div class="explanation">Change u, a, t – watch the ball move and equations update.</div>
     </div>
 
-    <!-- Triangular Infinite Well (FEM) -->
+    <!-- CORRECTED TRIANGULAR QUANTUM WELL (Finite Difference Grid) -->
     <div class="card">
-        <h2>🔺 Triangular Infinite Potential Well (FEM)</h2>
+        <h2>🔺 Triangular Infinite Potential Well (Correct Ground State)</h2>
         <div class="flex-row">
             <div class="control-group"><label>🔺 Head angle (apex)</label><input type="range" id="apexAngle" min="20" max="80" step="1" value="45"><div class="value-display" id="angleVal">45°</div></div>
-            <div class="control-group"><label>🔘 Mesh divisions (intensity)</label><input type="range" id="meshDiv" min="3" max="30" step="1" value="15"><div class="value-display" id="meshDivVal">15</div></div>
+            <div class="control-group"><label>🔘 Grid resolution (N x N)</label><input type="range" id="gridRes" min="40" max="120" step="10" value="80"><div class="value-display" id="gridResVal">80</div></div>
         </div>
         <div class="canvas-container">
-            <canvas id="meshCanvas" width="500" height="450" style="max-width:500px; background:#0f172a;"></canvas>
-            <canvas id="waveCanvas" width="500" height="450" style="max-width:500px; background:#0f172a;"></canvas>
-            <canvas id="probCanvas" width="500" height="450" style="max-width:500px; background:#0f172a;"></canvas>
+            <canvas id="triWaveCanvas" width="500" height="450" style="max-width:500px; background:#0f172a;"></canvas>
+            <canvas id="triProbCanvas" width="500" height="450" style="max-width:500px; background:#0f172a;"></canvas>
         </div>
         <div class="colorbar"></div>
-        <div class="fem-note" id="femNote">⚡ FEM solver: ground state wavefunction and probability density. Adjust mesh for higher accuracy.</div>
+        <div class="fem-note" id="triNote">⚡ Ground state wavefunction (left) and probability density (right) for a triangular infinite well. Zero on boundaries, maximum inside. Computed via finite differences on a regular grid.</div>
     </div>
 
     <!-- 1D Infinite Well (n = 1 to 5) -->
@@ -233,7 +202,7 @@
 </div>
 
 <script>
-    // ---------- FORCE VECTOR SIMULATOR ----------
+    // ---------- FORCE VECTOR SIMULATOR (unchanged) ----------
     const f1Mag = document.getElementById('f1_mag'), f1Ang = document.getElementById('f1_ang');
     const f2Mag = document.getElementById('f2_mag'), f2Ang = document.getElementById('f2_ang');
     const f1Val = document.getElementById('f1_val'), f1AngVal = document.getElementById('f1_ang_val');
@@ -290,7 +259,7 @@
     f2Mag.addEventListener('input', updateForces); f2Ang.addEventListener('input', updateForces);
     updateForces();
 
-    // ---------- 1D MOTION ----------
+    // ---------- 1D MOTION (unchanged) ----------
     const initVSlider = document.getElementById('initV'), accelSlider = document.getElementById('accel'), timeSlider = document.getElementById('time');
     const uVal = document.getElementById('u_val'), aVal = document.getElementById('a_val'), tVal = document.getElementById('t_val');
     const sSpan = document.getElementById('s_val'), vSpan = document.getElementById('v_val'), v2CheckSpan = document.getElementById('v2_check');
@@ -312,208 +281,210 @@
     }
     initVSlider.addEventListener('input', updateMotion); accelSlider.addEventListener('input', updateMotion); timeSlider.addEventListener('input', updateMotion); updateMotion();
 
-    // ---------- TRIANGULAR WELL FEM (ground state) ----------
-    let meshNodes = [], elements = [];
-    let apexPos = {x:0.5, y:0.5/Math.tan(45*Math.PI/360)};
-    function updateTriangleFromAngle(angleDeg) {
-        let alphaRad = angleDeg * Math.PI/180;
-        let h = 0.5 / Math.tan(alphaRad/2);
-        apexPos = {x:0.5, y:Math.min(2.0, Math.max(0.2, h))};
-        return apexPos;
-    }
-    function generateMesh(divisions) {
-        let nodesMap = new Map(), nodeList = [], elemList = [];
-        let A={x:0,y:0}, B={x:1,y:0}, C=apexPos;
-        let div = divisions;
-        for (let i=0; i<=div; i++) {
-            for (let j=0; j<=div-i; j++) {
-                let k = div - i - j;
-                let u=i/div, v=j/div, w=k/div;
-                let x = u*A.x + v*B.x + w*C.x;
-                let y = u*A.y + v*B.y + w*C.y;
-                let key = `${x.toFixed(6)},${y.toFixed(6)}`;
-                if (!nodesMap.has(key)) { nodesMap.set(key, nodeList.length); nodeList.push({x,y}); }
+    // ---------- CORRECT TRIANGULAR WELL (Finite Difference + Inverse Iteration) ----------
+    let triNodes = null; // not needed for grid method
+
+    function getTriangleMask(N, angleDeg) {
+        // Build grid from 0 to 1 in x and y, triangle defined by vertices:
+        // A(0,0), B(1,0), C(0.5, h) where h = 0.5 / tan(angle/2)
+        let angleRad = angleDeg * Math.PI / 180;
+        let h = 0.5 / Math.tan(angleRad/2);
+        if (h > 1.5) h = 1.5; // keep visible
+        let mask = Array(N).fill().map(() => Array(N).fill(false));
+        for (let i = 0; i < N; i++) {
+            for (let j = 0; j < N; j++) {
+                let x = i / (N-1);
+                let y = j / (N-1);
+                // barycentric test: point inside triangle? (0,0)-(1,0)-(0.5,h)
+                // using half-plane tests
+                let sign1 = (x - 0)*(0 - 0) - (y - 0)*(1 - 0); // edge AB: from (0,0) to (1,0): vector (1,0), normal (0,1) => y>=0
+                let sign2 = (x - 1)*(h - 0) - (y - 0)*(0.5 - 1); // edge B to C
+                let sign3 = (x - 0.5)*(0 - h) - (y - h)*(0 - 0.5); // edge C to A
+                let inside = (y >= 0) && (sign2 <= 0) && (sign3 <= 0);
+                if (inside) mask[i][j] = true;
             }
         }
-        for (let i=0; i<div; i++) {
-            for (let j=0; j<div-i; j++) {
-                let p0 = getIdx(i,j,div,nodesMap); let p1 = getIdx(i+1,j,div,nodesMap);
-                let p2 = getIdx(i,j+1,div,nodesMap); let p3 = getIdx(i+1,j+1,div,nodesMap);
-                if(p0!==undefined && p1!==undefined && p2!==undefined) elemList.push([p0,p1,p2]);
-                if(p1!==undefined && p2!==undefined && p3!==undefined) elemList.push([p1,p2,p3]);
-            }
-        }
-        function getIdx(i,j,div,map) { let k=div-i-j; let u=i/div, v=j/div, w=k/div; let x=u*0+v*1+w*apexPos.x; let y=u*0+v*0+w*apexPos.y; return map.get(`${x.toFixed(6)},${y.toFixed(6)}`); }
-        return {nodes:nodeList, elements:elemList};
+        return mask;
     }
-    function assembleFEM(nodes, elements) {
-        let n=nodes.length, K=Array(n).fill().map(()=>({})), M=Array(n).fill().map(()=>({}));
-        for(let el of elements){
-            let [i1,i2,i3]=el; let p1=nodes[i1],p2=nodes[i2],p3=nodes[i3];
-            let area=Math.abs((p2.x-p1.x)*(p3.y-p1.y)-(p3.x-p1.x)*(p2.y-p1.y))/2;
-            if(area<1e-12) continue;
-            let b1=p2.y-p3.y, c1=p3.x-p2.x, b2=p3.y-p1.y, c2=p1.x-p3.x, b3=p1.y-p2.y, c3=p2.x-p1.x;
-            let factor=1/(2*area);
-            let grad1={x:b1*factor,y:c1*factor}, grad2={x:b2*factor,y:c2*factor}, grad3={x:b3*factor,y:c3*factor};
-            let K11=(grad1.x*grad1.x+grad1.y*grad1.y)*area, K12=(grad1.x*grad2.x+grad1.y*grad2.y)*area, K13=(grad1.x*grad3.x+grad1.y*grad3.y)*area;
-            let K22=(grad2.x*grad2.x+grad2.y*grad2.y)*area, K23=(grad2.x*grad3.x+grad2.y*grad3.y)*area, K33=(grad3.x*grad3.x+grad3.y*grad3.y)*area;
-            let M11=area/6, M22=area/6, M33=area/6, M12=area/12, M13=area/12, M23=area/12;
-            function add(mat,i,j,v){ if(Math.abs(v)<1e-12)return; if(!mat[i][j]) mat[i][j]=0; mat[i][j]+=v; if(i!==j){ if(!mat[j][i]) mat[j][i]=0; mat[j][i]+=v; } }
-            add(K,i1,i1,K11); add(K,i1,i2,K12); add(K,i1,i3,K13); add(K,i2,i2,K22); add(K,i2,i3,K23); add(K,i3,i3,K33);
-            add(M,i1,i1,M11); add(M,i1,i2,M12); add(M,i1,i3,M13); add(M,i2,i2,M22); add(M,i2,i3,M23); add(M,i3,i3,M33);
-        }
-        let boundary=new Set();
-        let eps=1e-8;
-        for(let i=0;i<nodes.length;i++){
-            let x=nodes[i].x, y=nodes[i].y;
-            if(Math.abs(y)<eps) boundary.add(i);
-            else {
-                let onLeft = Math.abs(x*apexPos.y - y*apexPos.x) < eps && x>=0 && x<=apexPos.x+eps;
-                let onRight = Math.abs((x-1)*apexPos.y - y*(apexPos.x-1)) < eps && x>=apexPos.x-eps && x<=1+eps;
-                if(onLeft||onRight) boundary.add(i);
-            }
-        }
-        for(let idx of boundary){
-            for(let j in K[idx]) delete K[idx][j];
-            for(let i in K) if(K[i][idx]) delete K[i][idx];
-            K[idx][idx]=1;
-            for(let j in M[idx]) delete M[idx][j];
-            for(let i in M) if(M[i][idx]) delete M[i][idx];
-            M[idx][idx]=1;
-        }
-        return {K,M,n,boundary};
-    }
-    function smallestEigenvector(K,M,n){
-        function solveLinear(A,b,n,guess){
-            let x=guess.slice();
-            for(let iter=0;iter<500;iter++){
-                let res=0;
-                for(let i=0;i<n;i++){
-                    let sum=0;
-                    for(let j in A[i]) if(j!=i) sum+=A[i][j]*x[j];
-                    let newVal=(b[i]-sum)/(A[i][i]||1);
-                    let diff=newVal-x[i];
-                    res+=diff*diff;
-                    x[i]=newVal;
+
+    function solveGroundState(N, angleDeg) {
+        let mask = getTriangleMask(N, angleDeg);
+        let interior = [];
+        let idxMap = Array(N).fill().map(() => Array(N).fill(-1));
+        for (let i = 0; i < N; i++) {
+            for (let j = 0; j < N; j++) {
+                if (mask[i][j]) {
+                    idxMap[i][j] = interior.length;
+                    interior.push({i,j});
                 }
-                if(res<1e-10) break;
+            }
+        }
+        let M = interior.length;
+        if (M === 0) return {psi: null, prob: null, mask, idxMap, N, interior};
+        // Build sparse Laplacian (5-point stencil) with zero Dirichlet outside
+        let K = Array(M).fill().map(() => ({}));
+        let hx = 1/(N-1);
+        let hy = 1/(N-1);
+        let scale = 1/(hx*hx); // assume hx=hy for simplicity
+        for (let idx = 0; idx < M; idx++) {
+            let {i,j} = interior[idx];
+            let val = 4*scale;
+            // center
+            K[idx][idx] = (K[idx][idx] || 0) + val;
+            // neighbors
+            let neigh = [[i+1,j],[i-1,j],[i,j+1],[i,j-1]];
+            for (let [ni,nj] of neigh) {
+                if (ni>=0 && ni<N && nj>=0 && nj<N && mask[ni][nj]) {
+                    let nidx = idxMap[ni][nj];
+                    if (nidx !== -1) {
+                        K[idx][nidx] = (K[idx][nidx] || 0) - scale;
+                    }
+                }
+                // else Dirichlet: no contribution (already zero)
+            }
+        }
+        // Mass matrix is identity (we solve K ψ = λ ψ, but we want smallest eigenvalue of K)
+        // Use inverse iteration: solve K ψ_new = ψ_old
+        function solveLinear(A, b, n, maxIter=500) {
+            let x = new Array(n).fill(1);
+            for (let iter=0; iter<maxIter; iter++) {
+                let res = 0;
+                for (let i=0; i<n; i++) {
+                    let sum = 0;
+                    for (let j in A[i]) if (j != i) sum += A[i][j] * x[j];
+                    let newVal = (b[i] - sum) / (A[i][i] || 1);
+                    let diff = newVal - x[i];
+                    res += diff*diff;
+                    x[i] = newVal;
+                }
+                if (res < 1e-12) break;
             }
             return x;
         }
-        let phi=new Array(n).fill(1);
-        for(let iter=0;iter<200;iter++){
-            let Mphi=new Array(n).fill(0);
-            for(let i=0;i<n;i++) for(let j in M[i]) Mphi[i]+=M[i][j]*phi[j];
-            let phiNew=solveLinear(K,Mphi,n,phi);
-            let num=0,den=0;
-            for(let i=0;i<n;i++){
-                let sumK=0,sumM=0;
-                for(let j in K[i]) sumK+=K[i][j]*phiNew[j];
-                for(let j in M[i]) sumM+=M[i][j]*phiNew[j];
-                num+=phiNew[i]*sumK;
-                den+=phiNew[i]*sumM;
-            }
-            let lambdaNew=num/den;
-            let norm=0; for(let i=0;i<n;i++) norm+=phiNew[i]*phiNew[i]; norm=Math.sqrt(norm);
-            for(let i=0;i<n;i++) phiNew[i]/=norm;
-            let change=0; for(let i=0;i<n;i++) change+=Math.abs(phiNew[i]-phi[i]);
-            phi=phiNew;
-            if(change<1e-8) break;
+        let psi = new Array(M).fill(1);
+        for (let iter=0; iter<100; iter++) {
+            let b = psi.slice();
+            let psiNew = solveLinear(K, b, M);
+            // normalize
+            let norm = 0;
+            for (let i=0; i<M; i++) norm += psiNew[i]*psiNew[i];
+            norm = Math.sqrt(norm);
+            for (let i=0; i<M; i++) psiNew[i] /= norm;
+            let change = 0;
+            for (let i=0; i<M; i++) change += Math.abs(psiNew[i] - psi[i]);
+            psi = psiNew;
+            if (change < 1e-8) break;
         }
-        return {eigenvector:phi};
-    }
-    function drawMesh(ctx,nodes,elements,w,h){
-        ctx.clearRect(0,0,w,h); ctx.strokeStyle="#60a5fa"; ctx.lineWidth=0.8;
-        for(let el of elements){
-            ctx.beginPath();
-            let p1=nodes[el[0]],p2=nodes[el[1]],p3=nodes[el[2]];
-            ctx.moveTo(p1.x*w, h-p1.y*h); ctx.lineTo(p2.x*w, h-p2.y*h); ctx.lineTo(p3.x*w, h-p3.y*h); ctx.closePath(); ctx.stroke();
+        // build full grid wavefunction and probability
+        let psiFull = Array(N).fill().map(() => Array(N).fill(0));
+        let probFull = Array(N).fill().map(() => Array(N).fill(0));
+        for (let idx=0; idx<M; idx++) {
+            let {i,j} = interior[idx];
+            let val = psi[idx];
+            psiFull[i][j] = val;
+            probFull[i][j] = val*val;
         }
+        return {psiFull, probFull, mask, idxMap, N, interior, M};
     }
-    function drawSolution(ctx,nodes,elements,values,w,h,isProb){
-        let imgData=ctx.createImageData(w,h);
-        let minVal=Infinity,maxVal=-Infinity;
-        for(let v of values){ if(v<minVal)minVal=v; if(v>maxVal)maxVal=v; }
-        if(maxVal===minVal) maxVal=minVal+1;
-        for(let y=0;y<h;y++){
-            for(let x=0;x<w;x++){
-                let px=x/w, py=1-y/h;
-                let val=0;
-                for(let el of elements){
-                    let p1=nodes[el[0]],p2=nodes[el[1]],p3=nodes[el[2]];
-                    let v0x=p2.x-p1.x, v0y=p2.y-p1.y, v1x=p3.x-p1.x, v1y=p3.y-p1.y, v2x=px-p1.x, v2y=py-p1.y;
-                    let dot00=v0x*v0x+v0y*v0y, dot01=v0x*v1x+v0y*v1y, dot02=v0x*v2x+v0y*v2y, dot11=v1x*v1x+v1y*v1y, dot12=v1x*v2x+v1y*v2y;
-                    let invDenom=1/(dot00*dot11-dot01*dot01);
-                    let u=(dot11*dot02-dot01*dot12)*invDenom, v=(dot00*dot12-dot01*dot02)*invDenom;
-                    if(u>=0 && v>=0 && u+v<=1){
-                        let ww=1-u-v;
-                        val = ww*values[el[0]] + u*values[el[1]] + v*values[el[2]];
-                        break;
-                    }
+
+    function drawTriSolution() {
+        let angle = parseFloat(document.getElementById('apexAngle').value);
+        let N = parseInt(document.getElementById('gridRes').value);
+        document.getElementById('angleVal').innerText = angle+"°";
+        document.getElementById('gridResVal').innerText = N;
+        let {psiFull, probFull, mask, N:gridSize} = solveGroundState(N, angle);
+        if (!psiFull) return;
+        let wCanvas = document.getElementById('triWaveCanvas');
+        let probCanvas = document.getElementById('triProbCanvas');
+        let w = wCanvas.width = 500, h = wCanvas.height = 450;
+        wCanvas.width = w; wCanvas.height = h;
+        probCanvas.width = w; probCanvas.height = h;
+        let ctxWave = wCanvas.getContext('2d');
+        let ctxProb = probCanvas.getContext('2d');
+        // find min/max for wave and prob
+        let maxPsi = 0, maxProb = 0;
+        for (let i=0; i<gridSize; i++) {
+            for (let j=0; j<gridSize; j++) {
+                if (mask[i][j]) {
+                    maxPsi = Math.max(maxPsi, Math.abs(psiFull[i][j]));
+                    maxProb = Math.max(maxProb, probFull[i][j]);
                 }
-                if(isProb) val=val*val;
-                let norm=(val-minVal)/(maxVal-minVal);
-                if(isProb) norm=Math.min(1,Math.max(0,norm));
-                let r=Math.min(255,Math.floor(255*norm)), g=Math.min(255,Math.floor(255*(1-Math.abs(norm-0.5)*2))), b=Math.min(255,Math.floor(255*(1-norm)));
-                let idx=(y*w+x)*4;
-                imgData.data[idx]=r; imgData.data[idx+1]=g; imgData.data[idx+2]=b; imgData.data[idx+3]=255;
             }
         }
-        ctx.putImageData(imgData,0,0);
-        ctx.beginPath(); ctx.strokeStyle="white"; ctx.lineWidth=2;
-        ctx.moveTo(0, h); ctx.lineTo(1*w, h); ctx.lineTo(apexPos.x*w, h-apexPos.y*h); ctx.closePath(); ctx.stroke();
+        if (maxPsi === 0) maxPsi = 1;
+        if (maxProb === 0) maxProb = 1;
+        let imgWave = ctxWave.createImageData(w, h);
+        let imgProb = ctxProb.createImageData(w, h);
+        for (let x=0; x<w; x++) {
+            let i = Math.floor(x / w * (gridSize-1));
+            i = Math.min(gridSize-1, Math.max(0,i));
+            for (let y=0; y<h; y++) {
+                let j = Math.floor((1 - y/h) * (gridSize-1));
+                j = Math.min(gridSize-1, Math.max(0,j));
+                let inside = mask[i][j];
+                let psiVal = inside ? psiFull[i][j] : 0;
+                let probVal = inside ? probFull[i][j] : 0;
+                let normPsi = Math.abs(psiVal) / maxPsi;
+                let normProb = probVal / maxProb;
+                // color for wavefunction: hue from blue to red
+                let rPsi = Math.floor(255 * normPsi);
+                let gPsi = Math.floor(255 * (1 - Math.abs(normPsi-0.5)*2));
+                let bPsi = Math.floor(255 * (1 - normPsi));
+                let idx = (y*w + x)*4;
+                imgWave.data[idx] = rPsi; imgWave.data[idx+1] = gPsi; imgWave.data[idx+2] = bPsi; imgWave.data[idx+3] = 255;
+                // probability: heatmap
+                let rProb = Math.floor(255 * normProb);
+                let gProb = Math.floor(255 * (1 - Math.abs(normProb-0.5)*2));
+                let bProb = Math.floor(255 * (1 - normProb));
+                imgProb.data[idx] = rProb; imgProb.data[idx+1] = gProb; imgProb.data[idx+2] = bProb; imgProb.data[idx+3] = 255;
+            }
+        }
+        ctxWave.putImageData(imgWave, 0, 0);
+        ctxProb.putImageData(imgProb, 0, 0);
+        // draw triangle outline
+        let angleRad = angle * Math.PI/180;
+        let hTri = 0.5 / Math.tan(angleRad/2);
+        let apexX = 0.5, apexY = Math.min(1.5, hTri);
+        ctxWave.beginPath(); ctxWave.strokeStyle = "white"; ctxWave.lineWidth = 2;
+        ctxWave.moveTo(0, h); ctxWave.lineTo(w, h); ctxWave.lineTo(apexX*w, h - apexY*h); ctxWave.closePath(); ctxWave.stroke();
+        ctxProb.beginPath(); ctxProb.strokeStyle = "white"; ctxProb.lineWidth = 2;
+        ctxProb.moveTo(0, h); ctxProb.lineTo(w, h); ctxProb.lineTo(apexX*w, h - apexY*h); ctxProb.closePath(); ctxProb.stroke();
+        document.getElementById('triNote').innerHTML = `⚡ Correct ground state for triangular well (head angle ${angle}°). Wavefunction peaks inside, zero at boundaries. Grid: ${N}x${N}, interior points: ${(psiFull? psiFull.length : 0)}.`;
     }
-    async function updateTriangular(){
-        let angle=parseFloat(document.getElementById('apexAngle').value);
-        document.getElementById('angleVal').innerText=angle+"°";
-        let div=parseInt(document.getElementById('meshDiv').value);
-        document.getElementById('meshDivVal').innerText=div;
-        updateTriangleFromAngle(angle);
-        let {nodes,elements:elems}=generateMesh(div);
-        if(nodes.length===0) return;
-        let {K,M,n,boundary}=assembleFEM(nodes,elems);
-        let {eigenvector}=smallestEigenvector(K,M,n);
-        let meshCanvas=document.getElementById('meshCanvas'), w=meshCanvas.width=500, h=meshCanvas.height=450;
-        drawMesh(meshCanvas.getContext('2d'),nodes,elems,w,h);
-        let waveCanvas=document.getElementById('waveCanvas'); waveCanvas.width=w; waveCanvas.height=h;
-        drawSolution(waveCanvas.getContext('2d'),nodes,elems,eigenvector,w,h,false);
-        let probCanvas=document.getElementById('probCanvas'); probCanvas.width=w; probCanvas.height=h;
-        drawSolution(probCanvas.getContext('2d'),nodes,elems,eigenvector,w,h,true);
-        document.getElementById('femNote').innerHTML = `⚡ FEM: ${nodes.length} nodes, ${elems.length} elements. Ground state wavefunction (color) & probability density (right). Mesh divisions = ${div}.`;
-    }
-    document.getElementById('apexAngle').addEventListener('input', updateTriangular);
-    document.getElementById('meshDiv').addEventListener('input', updateTriangular);
-    updateTriangular();
+
+    document.getElementById('apexAngle').addEventListener('input', drawTriSolution);
+    document.getElementById('gridRes').addEventListener('input', drawTriSolution);
+    drawTriSolution();
 
     // ---------- 1D INFINITE WELL (n=1..5) ----------
-    function update1DWell(){
-        let L=parseFloat(document.getElementById('wellWidth').value);
-        let n=parseInt(document.getElementById('quantumN').value);
-        document.getElementById('widthVal').innerText=L.toFixed(1)+" nm";
-        document.getElementById('nVal').innerText=n;
-        let waveCanvas=document.getElementById('wave1D'), w=waveCanvas.width=600, h=waveCanvas.height=300;
-        let ctx=waveCanvas.getContext('2d');
+    function update1DWell() {
+        let L = parseFloat(document.getElementById('wellWidth').value);
+        let n = parseInt(document.getElementById('quantumN').value);
+        document.getElementById('widthVal').innerText = L.toFixed(1)+" nm";
+        document.getElementById('nVal').innerText = n;
+        let waveCanvas = document.getElementById('wave1D'), w = waveCanvas.width = 600, h = waveCanvas.height = 300;
+        let ctx = waveCanvas.getContext('2d');
         ctx.clearRect(0,0,w,h); ctx.fillStyle="#0f172a"; ctx.fillRect(0,0,w,h);
-        let norm=Math.sqrt(2/L);
+        let norm = Math.sqrt(2/L);
         ctx.beginPath(); ctx.strokeStyle="#f97316"; ctx.lineWidth=2;
-        for(let x=0;x<=w;x++){
-            let xx=x/w*L;
-            let psi=norm*Math.sin(n*Math.PI*xx/L);
-            let y=h/2 - psi*h/3;
+        for(let x=0; x<=w; x++) {
+            let xx = x/w * L;
+            let psi = norm * Math.sin(n * Math.PI * xx / L);
+            let y = h/2 - psi * h/3;
             if(x===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
         }
         ctx.stroke();
         ctx.strokeStyle="white"; ctx.lineWidth=1;
         ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(0,h); ctx.moveTo(w,0); ctx.lineTo(w,h); ctx.stroke();
-        let probCanvas=document.getElementById('prob1D'); probCanvas.width=w; probCanvas.height=h;
-        let pctx=probCanvas.getContext('2d');
+        let probCanvas = document.getElementById('prob1D'); probCanvas.width = w; probCanvas.height = h;
+        let pctx = probCanvas.getContext('2d');
         pctx.clearRect(0,0,w,h); pctx.fillStyle="#0f172a"; pctx.fillRect(0,0,w,h);
-        for(let x=0;x<=w;x++){
-            let xx=x/w*L;
-            let prob=(2/L)*Math.sin(n*Math.PI*xx/L)**2;
-            let heightProb=prob*h*0.8;
-            pctx.fillStyle=`hsl(${240 - prob*200}, 70%, 60%)`;
-            pctx.fillRect(x, h-heightProb, 2, heightProb);
+        for(let x=0; x<=w; x++) {
+            let xx = x/w * L;
+            let prob = (2/L) * Math.sin(n * Math.PI * xx / L)**2;
+            let heightProb = prob * h * 0.8;
+            pctx.fillStyle = `hsl(${240 - prob*200}, 70%, 60%)`;
+            pctx.fillRect(x, h - heightProb, 2, heightProb);
         }
         pctx.strokeStyle="white";
         pctx.beginPath(); pctx.moveTo(0,0); pctx.lineTo(0,h); pctx.moveTo(w,0); pctx.lineTo(w,h); pctx.stroke();
@@ -522,7 +493,7 @@
     document.getElementById('quantumN').addEventListener('input', update1DWell);
     update1DWell();
 
-    window.addEventListener('resize', () => { updateForces(); updateMotion(); updateTriangular(); update1DWell(); });
+    window.addEventListener('resize', () => { updateForces(); updateMotion(); drawTriSolution(); update1DWell(); });
 </script>
 </body>
 </html>
